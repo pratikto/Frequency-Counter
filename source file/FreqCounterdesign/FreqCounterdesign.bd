@@ -1,13 +1,286 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0x3BB89BABA24110C6",
       "device": "xc7z020clg400-1",
       "name": "FreqCounterdesign",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2020.1"
+      "tool_version": "2020.1",
+      "validated": "true"
     },
-    "design_tree": {}
+    "design_tree": {
+      "c_counter_binary_0": "",
+      "reg_0": "",
+      "AorB_0": "",
+      "FSM_0": ""
+    },
+    "ports": {
+      "gate": {
+        "direction": "I",
+        "parameters": {
+          "POLARITY": {
+            "value": "",
+            "value_src": "weak"
+          }
+        }
+      },
+      "clk": {
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "",
+            "value_src": "weak"
+          },
+          "FREQ_HZ": {
+            "value": "",
+            "value_src": "weak"
+          },
+          "PHASE": {
+            "value": "",
+            "value_src": "weak"
+          }
+        }
+      },
+      "inputSignal": {
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "",
+            "value_src": "weak"
+          },
+          "FREQ_HZ": {
+            "value": "",
+            "value_src": "weak"
+          },
+          "PHASE": {
+            "value": "",
+            "value_src": "weak"
+          }
+        }
+      },
+      "error": {
+        "direction": "O"
+      },
+      "Freq": {
+        "direction": "O",
+        "left": "63",
+        "right": "0"
+      },
+      "ready": {
+        "direction": "O"
+      },
+      "SCLR": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      }
+    },
+    "components": {
+      "c_counter_binary_0": {
+        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
+        "xci_name": "FreqCounterdesign_c_counter_binary_0_1",
+        "parameters": {
+          "CE": {
+            "value": "true"
+          },
+          "Output_Width": {
+            "value": "64"
+          },
+          "SCLR": {
+            "value": "true"
+          },
+          "SSET": {
+            "value": "false"
+          }
+        }
+      },
+      "reg_0": {
+        "vlnv": "xilinx.com:module_ref:reg:1.0",
+        "xci_name": "FreqCounterdesign_reg_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "reg",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "load": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "clr": {
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "d": {
+            "direction": "I",
+            "left": "63",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 64} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} DATA_WIDTH 64}",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "q": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          }
+        }
+      },
+      "AorB_0": {
+        "vlnv": "xilinx.com:module_ref:AorB:1.0",
+        "xci_name": "FreqCounterdesign_AorB_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "AorB",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "A": {
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "B": {
+            "direction": "I"
+          },
+          "C": {
+            "direction": "O",
+            "parameters": {
+              "POLARITY": {
+                "value": "",
+                "value_src": "weak"
+              }
+            }
+          }
+        }
+      },
+      "FSM_0": {
+        "vlnv": "xilinx.com:module_ref:FSM:1.0",
+        "xci_name": "FreqCounterdesign_FSM_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "FSM",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "clr": {
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "gate": {
+            "direction": "I"
+          },
+          "load": {
+            "direction": "O"
+          },
+          "ready": {
+            "direction": "O"
+          },
+          "error": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "FSM_0_load": {
+        "ports": [
+          "FSM_0/load",
+          "reg_0/load"
+        ]
+      },
+      "gate_1": {
+        "ports": [
+          "gate",
+          "c_counter_binary_0/CE",
+          "FSM_0/gate"
+        ]
+      },
+      "SCLR_1": {
+        "ports": [
+          "SCLR",
+          "AorB_0/A",
+          "reg_0/clr",
+          "FSM_0/clr"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "reg_0/clk",
+          "FSM_0/clk"
+        ]
+      },
+      "inputSignal_1": {
+        "ports": [
+          "inputSignal",
+          "c_counter_binary_0/CLK"
+        ]
+      },
+      "c_counter_binary_0_Q": {
+        "ports": [
+          "c_counter_binary_0/Q",
+          "reg_0/d"
+        ]
+      },
+      "FSM_0_ready": {
+        "ports": [
+          "FSM_0/ready",
+          "AorB_0/B",
+          "ready"
+        ]
+      },
+      "AorB_0_C": {
+        "ports": [
+          "AorB_0/C",
+          "c_counter_binary_0/SCLR"
+        ]
+      },
+      "FSM_0_error": {
+        "ports": [
+          "FSM_0/error",
+          "error"
+        ]
+      },
+      "reg_0_q": {
+        "ports": [
+          "reg_0/q",
+          "Freq"
+        ]
+      }
+    }
   }
 }

@@ -94,3 +94,12 @@
 !*.vsdx
 !*.png
 !*.jpg
+Frequency Counter.cache/
+
+Frequency Counter.ip_user_files/
+
+Frequency Counter.runs/
+
+Frequency Counter.sim/
+
+Frequency Counter.srcs/
