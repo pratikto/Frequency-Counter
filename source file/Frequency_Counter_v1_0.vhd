@@ -94,6 +94,15 @@ architecture arch_imp of Frequency_Counter_v1_0 is
 		C_S_AXI_ADDR_WIDTH	: integer	:= 4
 		);
 		port (
+		-- Users to add ports here
+        Freq : out STD_LOGIC_VECTOR ( 63 downto 0 );
+        SCLR : in STD_LOGIC;
+        clk : in STD_LOGIC;
+        error : out STD_LOGIC;
+        gate : in STD_LOGIC;
+        inputSignal : in STD_LOGIC;
+        ready : out STD_LOGIC;
+        -- User ports ends
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -153,18 +162,6 @@ architecture arch_imp of Frequency_Counter_v1_0 is
 		irq	: out std_logic
 		);
 	end component Frequency_Counter_v1_0_S_AXI_INTR;
-	
-	component FreqCounterdesign_wrapper
-    port(
-        Freq : out STD_LOGIC_VECTOR ( 63 downto 0 );
-        SCLR : in STD_LOGIC;
-        clk : in STD_LOGIC;
-        error : out STD_LOGIC;
-        gate : in STD_LOGIC;
-        inputSignal : in STD_LOGIC;
-        ready : out STD_LOGIC
-    );
-    end component;
 
 begin
 
@@ -175,6 +172,15 @@ Frequency_Counter_v1_0_S00_AXI_inst : Frequency_Counter_v1_0_S00_AXI
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
+	   -- Users to add ports here
+	    Freq => Freq,
+        SCLR => SCLR,
+        clk => clk,
+        error => error,
+        gate => gate,
+        inputSignal => inputSignal,
+        ready => ready,
+        -- User ports ends
 		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
@@ -235,15 +241,7 @@ Frequency_Counter_v1_0_S_AXI_INTR_inst : Frequency_Counter_v1_0_S_AXI_INTR
 	);
 
 	-- Add user logic here
-    FreqCounter : FreqCounterdesign_wrapper port map(
-        Freq => Freq,
-        SCLR => SCLR,
-        clk => clk,
-        error => error,
-        gate => gate,
-        inputSignal => inputSignal,
-        ready => ready
-    );
+
 	-- User logic ends
 
 end arch_imp;

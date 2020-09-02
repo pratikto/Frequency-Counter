@@ -16,7 +16,14 @@ entity Frequency_Counter_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-
+        Freq : out STD_LOGIC_VECTOR ( 63 downto 0 );
+        SCLR : in STD_LOGIC;
+        clk : in STD_LOGIC;
+        error : out STD_LOGIC;
+        gate : in STD_LOGIC;
+        inputSignal : in STD_LOGIC;
+        ready : out STD_LOGIC;
+        
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -84,7 +91,29 @@ entity Frequency_Counter_v1_0_S00_AXI is
 end Frequency_Counter_v1_0_S00_AXI;
 
 architecture arch_imp of Frequency_Counter_v1_0_S00_AXI is
-
+	
+	component FreqCounterdesign_wrapper
+    port(
+        Freq : out STD_LOGIC_VECTOR ( 63 downto 0 );
+        SCLR : in STD_LOGIC;
+        clk : in STD_LOGIC;
+        error : out STD_LOGIC;
+        gate : in STD_LOGIC;
+        inputSignal : in STD_LOGIC;
+        ready : out STD_LOGIC
+    );
+    end component;
+    --Input Signal
+    signal SCLR_signal : STD_LOGIC;
+    signal clk_signal : STD_LOGIC;
+    signal gate_signal : STD_LOGIC;
+    signal input_signal : STD_LOGIC;
+    
+    --Output Signal
+    signal Freq_signal : STD_LOGIC_VECTOR ( 63 downto 0 );
+    signal error_signal : STD_LOGIC;
+    signal ready_signal : STD_LOGIC;
+    
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -385,7 +414,20 @@ begin
 
 
 	-- Add user logic here
-
+    FreqCounter : FreqCounterdesign_wrapper port map(
+        Freq => Freq_signal,
+        SCLR => SCLR_signal,
+        clk => clk_signal,
+        error => error_signal,
+        gate => gate_signal,
+        inputSignal => input_signal,
+        ready => ready_signal
+    );
+    
+    slv_reg0 <= Freq_signal(31 downto 0);
+    slv_reg1 <= Freq_signal(63 downto 32);
+    slv_reg2 <= ready_signal & error_signal & input_signal & gate_signal & SCLR_signal & clk_signal & "00000000000000000000000000";
+	slv_reg3 <= (others => '0');
 	-- User logic ends
 
 end arch_imp;
