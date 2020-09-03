@@ -25,7 +25,7 @@ entity Frequency_Counter is
 	);
 	port (
 		-- Users to add ports here
-        Freq : out STD_LOGIC_VECTOR ( 63 downto 0 );
+--        Freq : out STD_LOGIC_VECTOR ( 63 downto 0 );
         SCLR : in STD_LOGIC;
         clk : in STD_LOGIC;
         error : out STD_LOGIC;
@@ -95,7 +95,7 @@ architecture arch_imp of Frequency_Counter is
 		);
 		port (
 		-- Users to add ports here
-        Freq : out STD_LOGIC_VECTOR ( 63 downto 0 );
+--        Freq : out STD_LOGIC_VECTOR ( 63 downto 0 );
         SCLR : in STD_LOGIC;
         clk : in STD_LOGIC;
         error : out STD_LOGIC;
@@ -173,7 +173,7 @@ Frequency_Counter_S00_AXI_inst : Frequency_Counter_S00_AXI
 	)
 	port map (
 	   -- Users to add ports here
-	    Freq => Freq,
+--	    Freq => Freq,
         SCLR => SCLR,
         clk => clk,
         error => error,
