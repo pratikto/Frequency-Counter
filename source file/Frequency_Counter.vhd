@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Frequency_Counter_v1_0 is
+entity Frequency_Counter is
 	generic (
 		-- Users to add parameters here
 
@@ -83,12 +83,12 @@ entity Frequency_Counter_v1_0 is
 		s_axi_intr_rready	: in std_logic;
 		irq	: out std_logic
 	);
-end Frequency_Counter_v1_0;
+end Frequency_Counter;
 
-architecture arch_imp of Frequency_Counter_v1_0 is
+architecture arch_imp of Frequency_Counter is
 
 	-- component declaration
-	component Frequency_Counter_v1_0_S00_AXI is
+	component Frequency_Counter_S00_AXI is
 		generic (
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 4
@@ -125,9 +125,9 @@ architecture arch_imp of Frequency_Counter_v1_0 is
 		S_AXI_RVALID	: out std_logic;
 		S_AXI_RREADY	: in std_logic
 		);
-	end component Frequency_Counter_v1_0_S00_AXI;
+	end component Frequency_Counter_S00_AXI;
 
-	component Frequency_Counter_v1_0_S_AXI_INTR is
+	component Frequency_Counter_S_AXI_INTR is
 		generic (
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 5;
@@ -161,12 +161,12 @@ architecture arch_imp of Frequency_Counter_v1_0 is
 		S_AXI_RREADY	: in std_logic;
 		irq	: out std_logic
 		);
-	end component Frequency_Counter_v1_0_S_AXI_INTR;
+	end component Frequency_Counter_S_AXI_INTR;
 
 begin
 
 -- Instantiation of Axi Bus Interface S00_AXI
-Frequency_Counter_v1_0_S00_AXI_inst : Frequency_Counter_v1_0_S00_AXI
+Frequency_Counter_S00_AXI_inst : Frequency_Counter_S00_AXI
 	generic map (
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
@@ -205,7 +205,7 @@ Frequency_Counter_v1_0_S00_AXI_inst : Frequency_Counter_v1_0_S00_AXI
 	);
 
 -- Instantiation of Axi Bus Interface S_AXI_INTR
-Frequency_Counter_v1_0_S_AXI_INTR_inst : Frequency_Counter_v1_0_S_AXI_INTR
+Frequency_Counter_S_AXI_INTR_inst : Frequency_Counter_S_AXI_INTR
 	generic map (
 		C_S_AXI_DATA_WIDTH	=> C_S_AXI_INTR_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S_AXI_INTR_ADDR_WIDTH,

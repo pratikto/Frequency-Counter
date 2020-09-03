@@ -96,7 +96,7 @@ begin
         gate <= '1';
         wait for gate_time;
         gate <= '0';
-        wait for 10 * clock;
+        wait for 100 * clock;
     end process; 
     
     inpSignal_stimulus : process

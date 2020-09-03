@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Frequency_Counter_v1_0_S_AXI_INTR is
+entity Frequency_Counter_S_AXI_INTR is
 	generic (
 		-- Users to add parameters here
 
@@ -93,9 +93,9 @@ entity Frequency_Counter_v1_0_S_AXI_INTR is
 		-- interrupt out port
 		irq	: out std_logic
 	);
-end Frequency_Counter_v1_0_S_AXI_INTR;
+end Frequency_Counter_S_AXI_INTR;
 
-architecture arch_imp of Frequency_Counter_v1_0_S_AXI_INTR is
+architecture arch_imp of Frequency_Counter_S_AXI_INTR is
 
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
