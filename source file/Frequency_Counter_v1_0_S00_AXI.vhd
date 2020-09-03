@@ -16,7 +16,7 @@ entity Frequency_Counter_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-        Freq : out STD_LOGIC_VECTOR ( 63 downto 0 );
+--        Freq : out STD_LOGIC_VECTOR ( 63 downto 0 );
         SCLR : in STD_LOGIC;
         clk : in STD_LOGIC;
         error : out STD_LOGIC;
@@ -423,11 +423,23 @@ begin
         inputSignal => input_signal,
         ready => ready_signal
     );
-    
+
+--  AXI register    
     slv_reg0 <= Freq_signal(31 downto 0);
     slv_reg1 <= Freq_signal(63 downto 32);
     slv_reg2 <= ready_signal & error_signal & input_signal & gate_signal & SCLR_signal & clk_signal & "00000000000000000000000000";
-	slv_reg3 <= (others => '0');
+	slv_reg3 <= (others => '1');
+    
+--  input signal	
+	SCLR_signal <= SCLR;
+	clk_signal <= clk;
+	gate_signal <=  gate;
+	input_signal <= inputSignal;
+	
+--	output signal
+	error <= error_signal;
+	ready <= ready_signal;
+	
 	-- User logic ends
 
 end arch_imp;
