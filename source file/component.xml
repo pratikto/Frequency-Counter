@@ -2,7 +2,7 @@
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>ykgw.net</spirit:vendor>
   <spirit:library>user</spirit:library>
-  <spirit:name>Frequency_Counter_v1_0</spirit:name>
+  <spirit:name>Frequency_Counter</spirit:name>
   <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
@@ -491,7 +491,7 @@
         <spirit:displayName>Synthesis</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
         <spirit:language>VHDL</spirit:language>
-        <spirit:modelName>Frequency_Counter_v1_0</spirit:modelName>
+        <spirit:modelName>Frequency_Counter</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
@@ -501,7 +501,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f03a7426</spirit:value>
+            <spirit:value>46fe5df9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -510,7 +510,7 @@
         <spirit:displayName>Simulation</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
         <spirit:language>VHDL</spirit:language>
-        <spirit:modelName>Frequency_Counter_v1_0</spirit:modelName>
+        <spirit:modelName>Frequency_Counter</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_c_counter_binary_12_0__ref_view_fileset</spirit:localName>
         </spirit:fileSetRef>
@@ -520,7 +520,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2dc4f3b3</spirit:value>
+            <spirit:value>1b5d301e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -535,7 +535,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>cabeae7e</spirit:value>
+            <spirit:value>e65544d2</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -555,23 +555,6 @@
       </spirit:view>
     </spirit:views>
     <spirit:ports>
-      <spirit:port>
-        <spirit:name>Freq</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long">63</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
-              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
       <spirit:port>
         <spirit:name>SCLR</spirit:name>
         <spirit:wire>
@@ -1414,20 +1397,9 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>FreqCounterdesign/ip/FreqCounterdesign_reg_0_0/synth/FreqCounterdesign_reg_0_0.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>FreqCounterdesign/ip/FreqCounterdesign_AorB_0_0/synth/FreqCounterdesign_AorB_0_0.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>FreqCounterdesign/ip/FreqCounterdesign_FSM_0_0/synth/FreqCounterdesign_FSM_0_0.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>FreqCounterdesign/ip/FreqCounterdesign_c_counter_binary_0_1/FreqCounterdesign_c_counter_binary_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_c_counter_binary_0</spirit:userFileType>
         <spirit:define>
           <spirit:name>processing_order</spirit:name>
           <spirit:value>early</spirit:value>
@@ -1468,17 +1440,17 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>Frequency_Counter_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>Frequency_Counter_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>Frequency_Counter_v1_0_S_AXI_INTR.vhd</spirit:name>
+        <spirit:name>Frequency_Counter_S_AXI_INTR.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>Frequency_Counter_v1_0.vhd</spirit:name>
+        <spirit:name>Frequency_Counter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_ae999349</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_7a69bb13</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -1494,20 +1466,9 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>FreqCounterdesign/ip/FreqCounterdesign_reg_0_0/sim/FreqCounterdesign_reg_0_0.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>FreqCounterdesign/ip/FreqCounterdesign_AorB_0_0/sim/FreqCounterdesign_AorB_0_0.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>FreqCounterdesign/ip/FreqCounterdesign_FSM_0_0/sim/FreqCounterdesign_FSM_0_0.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>FreqCounterdesign/ip/FreqCounterdesign_c_counter_binary_0_1/FreqCounterdesign_c_counter_binary_0_1.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_c_counter_binary_0</spirit:userFileType>
         <spirit:define>
           <spirit:name>processing_order</spirit:name>
           <spirit:value>early</spirit:value>
@@ -1534,19 +1495,27 @@
         </spirit:define>
       </spirit:file>
       <spirit:file>
+        <spirit:name>FreqCounterdesign/sim/FreqCounterdesign.protoinst</spirit:name>
+        <spirit:fileType>unknown</spirit:fileType>
+        <spirit:define>
+          <spirit:name>processing_order</spirit:name>
+          <spirit:value>early</spirit:value>
+        </spirit:define>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>FreqCounterdesign/hdl/FreqCounterdesign_wrapper.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>Frequency_Counter_v1_0_S00_AXI.vhd</spirit:name>
+        <spirit:name>Frequency_Counter_S00_AXI.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>Frequency_Counter_v1_0_S_AXI_INTR.vhd</spirit:name>
+        <spirit:name>Frequency_Counter_S_AXI_INTR.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>Frequency_Counter_v1_0.vhd</spirit:name>
+        <spirit:name>Frequency_Counter.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1572,14 +1541,14 @@
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/Frequency_Counter_v1_0_v1_0.tcl</spirit:name>
+        <spirit:name>xgui/Frequency_Counter_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_bf6dda52</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>Frequency_Counter_v1_0_v1_0</spirit:description>
+  <spirit:description>Frequency_Counter_v1_0</spirit:description>
   <spirit:parameters>
     <spirit:parameter>
       <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
@@ -1628,7 +1597,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">Frequency_Counter_v1_0_v1_0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">Frequency_Counter_v1_0</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -1639,19 +1608,34 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>Frequency_Counter_v1_0_v1_0</xilinx:displayName>
+      <xilinx:displayName>Frequency_Counter_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2020-09-02T17:28:16Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2020-09-03T16:00:50Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1235a88b_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@646ae2f7_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@751ea02f_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@518c6066_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4086c63e_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31b5262c_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70fd0e15_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15ebc5b5_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f1a8a16_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@450e4994_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37a7a833_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22ee1a52_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@289a7b3b_ARCHIVE_LOCATION">c:/users/40600727/onedrive - yokogawa asean/frequency counter/source file</xilinx:tag>
+      </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="827c2797"/>
-      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="1930a6df"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="fe4d3d5a"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="ded38545"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="2be86a4c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="2ced7110"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="3fd30d99"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="6b0daa4c"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="37217715"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="202f7115"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
