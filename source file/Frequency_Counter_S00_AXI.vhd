@@ -424,19 +424,19 @@ begin
         ready => ready_signal
     );
 
---  AXI register    
+    -- AXI register    
     slv_reg0 <= Freq_signal(31 downto 0);
     slv_reg1 <= Freq_signal(63 downto 32);
     slv_reg2 <= ready_signal & error_signal & input_signal & gate_signal & SCLR_signal & clk_signal & "00000000000000000000000000";
 	slv_reg3 <= (others => '1');
     
---  input signal	
+    -- input signal	
 	SCLR_signal <= SCLR;
 	clk_signal <= clk;
 	gate_signal <=  gate;
 	input_signal <= inputSignal;
 	
---	output signal
+    -- output signal
 	error <= error_signal;
 	ready <= ready_signal;
 	
