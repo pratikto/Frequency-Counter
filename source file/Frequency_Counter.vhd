@@ -57,31 +57,7 @@ entity Frequency_Counter is
 		s00_axi_rdata	: out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
 		s00_axi_rresp	: out std_logic_vector(1 downto 0);
 		s00_axi_rvalid	: out std_logic;
-		s00_axi_rready	: in std_logic;
-
-		-- Ports of Axi Slave Bus Interface S_AXI_INTR
-		s_axi_intr_aclk	: in std_logic;
-		s_axi_intr_aresetn	: in std_logic;
-		s_axi_intr_awaddr	: in std_logic_vector(C_S_AXI_INTR_ADDR_WIDTH-1 downto 0);
-		s_axi_intr_awprot	: in std_logic_vector(2 downto 0);
-		s_axi_intr_awvalid	: in std_logic;
-		s_axi_intr_awready	: out std_logic;
-		s_axi_intr_wdata	: in std_logic_vector(C_S_AXI_INTR_DATA_WIDTH-1 downto 0);
-		s_axi_intr_wstrb	: in std_logic_vector((C_S_AXI_INTR_DATA_WIDTH/8)-1 downto 0);
-		s_axi_intr_wvalid	: in std_logic;
-		s_axi_intr_wready	: out std_logic;
-		s_axi_intr_bresp	: out std_logic_vector(1 downto 0);
-		s_axi_intr_bvalid	: out std_logic;
-		s_axi_intr_bready	: in std_logic;
-		s_axi_intr_araddr	: in std_logic_vector(C_S_AXI_INTR_ADDR_WIDTH-1 downto 0);
-		s_axi_intr_arprot	: in std_logic_vector(2 downto 0);
-		s_axi_intr_arvalid	: in std_logic;
-		s_axi_intr_arready	: out std_logic;
-		s_axi_intr_rdata	: out std_logic_vector(C_S_AXI_INTR_DATA_WIDTH-1 downto 0);
-		s_axi_intr_rresp	: out std_logic_vector(1 downto 0);
-		s_axi_intr_rvalid	: out std_logic;
-		s_axi_intr_rready	: in std_logic;
-		irq	: out std_logic
+		s00_axi_rready	: in std_logic
 	);
 end Frequency_Counter;
 
